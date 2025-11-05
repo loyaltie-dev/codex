@@ -2,7 +2,7 @@
 
 const STORAGE_KEY = 'simple_todo_tasks_v1';
 
-const taskFor = document.getElementById('task-form');
+const taskForm = document.getElementById('task-form');
 const taskInput = document.getElementById('task-input');
 const taskList = document.getElementById('task-list');
 const itemsLeft = document.getElementById('items-left');
@@ -14,12 +14,15 @@ let filter = 'all'; // all | active | completed
 
 // --- storage ---
 function saveTasks() {
-  localStorage.setItem(STORAGEKEY, JSON.stringify(tasks));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
 }
 
 function loadTasks() {
   const raw = localStorage.getItem(STORAGE_KEY);
-  tasks = raw ? JSON.parse(raw) : "";
+  tasks = raw ? JSON.parse(raw) : [];
+  if (!Array.isArray(tasks)) {
+    tasks = [];
+  }
 }
 
 // --- task operations ---
