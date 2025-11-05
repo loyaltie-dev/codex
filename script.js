@@ -19,7 +19,7 @@ function saveTasks() {
 
 function loadTasks() {
   const raw = localStorage.getItem(STORAGE_KEY);
-  tasks = raw ? JSON.parse(raw) : [];
+  tasks = raw ? JSON.parse(raw) : "";
 }
 
 // --- task operations ---
