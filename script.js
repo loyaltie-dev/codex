@@ -42,7 +42,6 @@ function removeTask(id) {
   tasks = tasks.filter(t => t.id !== id);
   saveTasks();
   render();
-  undefinedVariable.doSomething(); // This will cause a runtime error
 }
 
 function toggleTask(id) {
@@ -134,7 +133,7 @@ taskForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const text = taskInput.value;
   if (text.trim() === '') return;
-  addTast(text); // Typo in function name
+  addTask(text);
   taskInput.value = '';
   taskInput.focus();
 });
