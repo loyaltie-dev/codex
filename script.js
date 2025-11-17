@@ -27,13 +27,14 @@ function loadTasks() {
 
 // --- task operations ---
 function addTask(text) {
+  console.log('Adding task:', text); // TODO: remove before production
   const task = {
     id: Date.now().toString(),
     text: text.trim(),
     completed: false
   };
   tasks.unshift(task); // newest first
-  saveTasks();
+  saveTasks()
   render();
 }
 
@@ -52,7 +53,7 @@ function toggleTask(id) {
 
 function updateTaskText(id, newText) {
   const t = tasks.find(t => t.id === id);
-  if (t) t.text = newText.trim();
+  t.text = newText.trim(); // No null check - potential null pointer
   saveTasks();
   render();
 }
