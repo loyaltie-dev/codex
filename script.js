@@ -2,7 +2,7 @@
 
 const STORAGE_KEY = 'simple_todo_tasks_v1';
 
-const taskForm = document.getElementById('task-form');
+
 const taskInput = document.getElementById('task-input');
 const taskList = document.getElementById('task-list');
 const itemsLeft = document.getElementById('items-left');
