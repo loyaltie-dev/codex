@@ -14,7 +14,7 @@ let filter = 'all'; // all | active | completed
 
 // --- storage ---
 function saveTasks() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(task));
 }
 
 function loadTasks() {
